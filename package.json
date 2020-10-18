@@ -1,0 +1,47 @@
+{
+  "name": "test_objection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/nodemon",
+		"db:all": "npm run migration:rollback && npm run migration:apply && npm run seed:apply",
+		"migration:create": "./node_modules/.bin/knex migrate:make --knexfile db/knexfile.js",
+		"migration:apply": "./node_modules/.bin/knex migrate:latest --knexfile db/knexfile.js",
+		"migration:rollback": "./node_modules/.bin/knex migrate:rollback --all --knexfile db/knexfile.js",
+		"seed:make": "./node_modules/.bin/knex seed:make --knexfile db/knexfile.js",
+		"seed:apply": "./node_modules/.bin/knex seed:run --knexfile db/knexfile.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/common": "^7.4.4",
+    "@nestjs/config": "^0.5.0",
+    "@nestjs/core": "^7.4.4",
+    "@nestjs/platform-express": "^7.4.4",
+    "@nestjs/testing": "^7.4.4",
+    "@types/body-parser": "^1.19.0",
+    "@types/express": "github:types/express",
+    "body-parser": "^1.19.0",
+    "bunyan": "^1.8.14",
+    "dotenv": "^8.2.0",
+    "husky": "^4.3.0",
+    "joi": "^17.2.1",
+    "knex": "^0.21.6",
+    "objection": "^2.2.3",
+    "objection-repositories": "^1.8.1",
+    "objection-softdelete": "^2.0.1",
+    "pg": "^8.4.1",
+    "pg-hstore": "^2.3.3",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.6.3",
+    "ts-node": "^9.0.0",
+    "tsc-watch": "^4.2.9",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.5"
+  }
+}

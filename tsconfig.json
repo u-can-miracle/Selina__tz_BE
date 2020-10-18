@@ -1,0 +1,28 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"noImplicitAny": false,
+		"sourceMap": true,
+		"outDir": "build",
+		"types": ["node"],
+		"lib": ["es2017", "es6"],
+    "target": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+		"noFallthroughCasesInSwitch": true,
+		"skipLibCheck": true,
+		"extendedDiagnostics": true,
+		"experimentalDecorators": true,
+    "allowJs": true,
+    "checkJs": true,
+		"baseUrl": "src",
+		"moduleResolution": "node"
+	},
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"node_modules",
+    "src/controllers/plan/charge.ts"
+	]
+}
