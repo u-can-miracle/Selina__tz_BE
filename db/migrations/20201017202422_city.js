@@ -1,4 +1,6 @@
-const tableName = 'city'
+const { TABLE_NAMES } = require('../dbData')
+
+const tableName = TABLE_NAMES.city
 
 exports.up = function up(knex){
 	return knex.schema.createTable(tableName, t => {

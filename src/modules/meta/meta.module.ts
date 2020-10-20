@@ -5,6 +5,7 @@ import { Model } from 'objection'
 import { config, CONFIG, IConfig } from './config'
 import createLogger, { APP_LOGGER } from './logger'
 import { DATABASE_CONNECTION } from './db'
+import { repositoryFactory, REPO_FACTORY } from './repo.factory'
 
 const customProviders: Provider[] = [
   {
@@ -18,6 +19,10 @@ const customProviders: Provider[] = [
     },
     inject: [CONFIG]
   },
+	{
+		provide: REPO_FACTORY,
+		useValue: repositoryFactory,
+	},
 	{
 		provide: DATABASE_CONNECTION,
 		useFactory: async (conf: IConfig) => {

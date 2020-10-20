@@ -4,7 +4,7 @@
 		"noImplicitAny": false,
 		"sourceMap": true,
 		"outDir": "build",
-		"types": ["node"],
+		"types": ["node", "jest"],
 		"lib": ["es2017", "es6"],
     "target": "esnext",
     "moduleResolution": "node",
@@ -16,13 +16,17 @@
     "allowJs": true,
     "checkJs": true,
 		"baseUrl": "src",
-		"moduleResolution": "node"
+		"moduleResolution": "node",
+		"typeRoots": ["node_modules/@types"],
+		"noUnusedLocals": false,
+		"noUnusedParameters": true
 	},
 	"include": [
+		"node_modules/@types",
+		"@jest/types",
 		"src/**/*.ts"
 	],
 	"exclude": [
-		"node_modules",
     "src/controllers/plan/charge.ts"
 	]
 }

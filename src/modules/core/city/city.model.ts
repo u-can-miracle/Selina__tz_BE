@@ -1,27 +1,39 @@
 import { Injectable } from '@nestjs/common'
-import * as objection from 'objection'
+import { Model } from 'objection'
 import * as path from 'path'
 
+import { TABLE_NAMES } from '../../../../db/dbData'
 import { BaseModel } from '../../../utils/model.base'
-import { ICountry } from '../country/interfaces'
+import { CountryModel } from '../country/country.model'
+import { CountryCityModel } from '../country-city/country-city.model'
 
 @Injectable()
 export class CityModel extends BaseModel {
-  static tableName = 'city'
+  static tableName = TABLE_NAMES.city
 
   id: number
   name: string
 	countryId: number
-	country: ICountry
+
+	country: CountryModel
+	countryCity: CountryCityModel
 
   static relationMappings = {
-    country: {
-      relation: objection.Model.HasOneRelation,
-      modelClass: path.join(__dirname, '../country/country.model'),
-      join: {
+		country: {
+			relation: Model.BelongsToOneRelation,
+			modelClass: path.join(__dirname, '../country/country.model'),
+			join: {
 				from: `${CityModel.tableName}.country_id`,
-        to: 'country.id'
-      }
-    }
+				to: `${TABLE_NAMES.country}.id`,
+			}
+		},
+		countryCity: {
+			relation: Model.HasOneRelation,
+			modelClass: path.join(__dirname, '../country-city/country-city.model'),
+			join: {
+				from: `${CityModel.tableName}.id`,
+				to: `${TABLE_NAMES.countryCity}.city_id`,
+			}
+		},
   }
 }

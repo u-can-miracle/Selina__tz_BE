@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@nestjs/common'
 
 import { CountryRepository } from './country.repository'
-import { ICountry } from './interfaces'
+import { CountryModel } from './country.model'
 
 @Injectable()
 export class CountryService {
@@ -9,7 +9,11 @@ export class CountryService {
 		@Inject(CountryRepository) private readonly countryRepository: CountryRepository,
 	) {}
 
-  findAll(): ICountry[] {
+  findAll(): CountryModel[] {
     return this.countryRepository.common.find({})
+  }
+
+  findAllWithCitiesAndEstate(): Promise<CountryModel[]> {
+    return this.countryRepository.findAllWithCitiesAndEstate()
   }
 }

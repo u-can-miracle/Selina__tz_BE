@@ -5,7 +5,7 @@ import {
 } from '@nestjs/common'
 
 import { CountryService } from './country.service'
-import { ICountry } from './interfaces'
+import { CountryModel } from './country.model'
 
 @Controller('country')
 export class CountryController {
@@ -14,7 +14,12 @@ export class CountryController {
 	) {}
 
 	@Get()
-  async findAll(): Promise<ICountry[]> {
+  async findAll(): Promise<CountryModel[]> {
     return this.countryService.findAll()
+  }
+
+	@Get('city/estate')
+  async findAllWithCitiesAndEstate(): Promise<CountryModel[]> {
+    return this.countryService.findAllWithCitiesAndEstate()
   }
 }

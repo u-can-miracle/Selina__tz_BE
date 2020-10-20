@@ -1,38 +1,11 @@
-const tableName = 'city'
+const { cities, TABLE_NAMES } = require('../dbData')
 
-// const contries = [
-// 	'Guatemala', // id=1
-// 	'Panama', // id=2
-// 	'Mexico', // id=3
-// 	'Colambia', // id=4
-// 	'Nicaragua', // id=5
-// ]
-const toInsert = [
-	{
-		name: 'Antigua',
-		country_id: 1,
-	},
-	{
-		name: 'Bocas Del Toro',
-		country_id: 2,
-	},
-	{
-		name: 'Cancun',
-		country_id: 3,
-	},
-	{
-		name: 'Cartagena',
-		country_id: 4,
-	},
-	{
-		name: 'Granada',
-		country_id: 5,
-	},
-]
+const tableName = TABLE_NAMES.city
 
 exports.seed = function seed(knex){
-	return knex(tableName).insert(toInsert.map(item => ({
-		...item,
+	return knex(tableName).insert(cities.map(item => ({
+		name: item.name,
+		country_id: item.country_id,
 		created_at: knex.fn.now(),
 		updated_at: knex.fn.now(),
 	})))

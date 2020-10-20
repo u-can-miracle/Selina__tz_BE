@@ -1,7 +1,7 @@
 version: "3"
 services:
-  web_service:
-    container_name: starter_web
+  web_selina:
+    container_name: web_selina
     build:
       context: .
       dockerfile: docker/node/Dockerfile
@@ -11,22 +11,22 @@ services:
     volumes:
       - .:/app
     depends_on:
-    - db_service
+    - db_selina
     networks:
-    - network_starter
+    - network_selina
 
-  db_service:
-    container_name: starter_db
+  db_selina:
+    container_name: db_selina
     image: postgres:11
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=app_db
+      - POSTGRES_DB=selina_db
     ports:
     - "5432:5432"
     networks:
-    - network_starter
+    - network_selina
 
 networks:
-  network_starter:
+  network_selina:
     driver: bridge

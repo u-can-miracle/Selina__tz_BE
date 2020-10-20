@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "8343d3d2-d2b8-4f3c-9c78-a2588188fe98",
+		"name": "Selina",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FE",
+			"item": [
+				{
+					"name": "Locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://locations.selinatech.com/locations",
+							"protocol": "https",
+							"host": [
+								"locations",
+								"selinatech",
+								"com"
+							],
+							"path": [
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://events.selinatech.com/events?locationIDLegacy=AR",
+							"protocol": "https",
+							"host": [
+								"events",
+								"selinatech",
+								"com"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "locationIDLegacy",
+									"value": "AR"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "BE",
+			"item": [
+				{
+					"name": "Cuntry",
+					"item": [
+						{
+							"name": "country/city/estate",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/api/country/city/estate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"country",
+										"city",
+										"estate"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "country/city/estate",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3001/api/country/city/estate",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"country",
+												"city",
+												"estate"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2945"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b81-+6kgARfJ0arIRFhC5vt+SCWhMpE\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 20 Oct 2020 08:41:26 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Guatemala\",\n        \"created_at\": \"2020-10-19T15:23:39.155Z\",\n        \"updated_at\": \"2020-10-19T15:23:39.155Z\",\n        \"deleted_at\": null,\n        \"cities\": [\n            {\n                \"id\": 1,\n                \"name\": \"Antigua\",\n                \"country_id\": 1,\n                \"created_at\": \"2020-10-19T15:23:39.160Z\",\n                \"updated_at\": \"2020-10-19T15:23:39.160Z\",\n                \"deleted_at\": null,\n                \"countryCity\": {\n                    \"id\": 1,\n                    \"country_id\": 1,\n                    \"city_id\": 1,\n                    \"created_at\": \"2020-10-19T15:23:39.162Z\",\n                    \"updated_at\": \"2020-10-19T15:23:39.162Z\",\n                    \"deleted_at\": null,\n                    \"estates\": [\n                        {\n                            \"id\": 1,\n                            \"name\": \"Antigua estate\",\n                            \"country_city_id\": 1,\n                            \"created_at\": \"2020-10-19T15:23:39.164Z\",\n                            \"updated_at\": \"2020-10-19T15:23:39.164Z\",\n                            \"deleted_at\": null\n                        }\n                    ]\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Panama\",\n        \"created_at\": \"2020-10-19T15:23:39.155Z\",\n        \"updated_at\": \"2020-10-19T15:23:39.155Z\",\n        \"deleted_at\": null,\n        \"cities\": [\n            {\n                \"id\": 2,\n                \"name\": \"Bocas Del Toro\",\n                \"country_id\": 2,\n                \"created_at\": \"2020-10-19T15:23:39.160Z\",\n                \"updated_at\": \"2020-10-19T15:23:39.160Z\",\n                \"deleted_at\": null,\n                \"countryCity\": {\n                    \"id\": 2,\n                    \"country_id\": 2,\n                    \"city_id\": 2,\n                    \"created_at\": \"2020-10-19T15:23:39.162Z\",\n                    \"updated_at\": \"2020-10-19T15:23:39.162Z\",\n                    \"deleted_at\": null,\n                    \"estates\": [\n                        {\n                            \"id\": 2,\n                            \"name\": \"Bocas Del Toro estate\",\n                            \"country_city_id\": 2,\n                            \"created_at\": \"2020-10-19T15:23:39.164Z\",\n                            \"updated_at\": \"2020-10-19T15:23:39.164Z\",\n                            \"deleted_at\": null\n                        }\n                    ]\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Mexico\",\n        \"created_at\": \"2020-10-19T15:23:39.155Z\",\n        \"updated_at\": \"2020-10-19T15:23:39.155Z\",\n        \"deleted_at\": null,\n        \"cities\": [\n            {\n                \"id\": 3,\n                \"name\": \"Cancun\",\n                \"country_id\": 3,\n                \"created_at\": \"2020-10-19T15:23:39.160Z\",\n                \"updated_at\": \"2020-10-19T15:23:39.160Z\",\n                \"deleted_at\": null,\n                \"countryCity\": {\n                    \"id\": 3,\n                    \"country_id\": 3,\n                    \"city_id\": 3,\n                    \"created_at\": \"2020-10-19T15:23:39.162Z\",\n                    \"updated_at\": \"2020-10-19T15:23:39.162Z\",\n                    \"deleted_at\": null,\n                    \"estates\": [\n                        {\n                            \"id\": 3,\n                            \"name\": \"Cancun estate\",\n                            \"country_city_id\": 3,\n                            \"created_at\": \"2020-10-19T15:23:39.164Z\",\n                            \"updated_at\": \"2020-10-19T15:23:39.164Z\",\n                            \"deleted_at\": null\n                        }\n                    ]\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Colambia\",\n        \"created_at\": \"2020-10-19T15:23:39.155Z\",\n        \"updated_at\": \"2020-10-19T15:23:39.155Z\",\n        \"deleted_at\": null,\n        \"cities\": [\n            {\n                \"id\": 4,\n                \"name\": \"Cartagena\",\n                \"country_id\": 4,\n                \"created_at\": \"2020-10-19T15:23:39.160Z\",\n                \"updated_at\": \"2020-10-19T15:23:39.160Z\",\n                \"deleted_at\": null,\n                \"countryCity\": {\n                    \"id\": 4,\n                    \"country_id\": 4,\n                    \"city_id\": 4,\n                    \"created_at\": \"2020-10-19T15:23:39.162Z\",\n                    \"updated_at\": \"2020-10-19T15:23:39.162Z\",\n                    \"deleted_at\": null,\n                    \"estates\": [\n                        {\n                            \"id\": 4,\n                            \"name\": \"Cartagena estate\",\n                            \"country_city_id\": 4,\n                            \"created_at\": \"2020-10-19T15:23:39.164Z\",\n                            \"updated_at\": \"2020-10-19T15:23:39.164Z\",\n                            \"deleted_at\": null\n                        }\n                    ]\n                }\n            }\n        ]\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Nicaragua\",\n        \"created_at\": \"2020-10-19T15:23:39.155Z\",\n        \"updated_at\": \"2020-10-19T15:23:39.155Z\",\n        \"deleted_at\": null,\n        \"cities\": [\n            {\n                \"id\": 5,\n                \"name\": \"Granada\",\n                \"country_id\": 5,\n                \"created_at\": \"2020-10-19T15:23:39.160Z\",\n                \"updated_at\": \"2020-10-19T15:23:39.160Z\",\n                \"deleted_at\": null,\n                \"countryCity\": {\n                    \"id\": 5,\n                    \"country_id\": 5,\n                    \"city_id\": 5,\n                    \"created_at\": \"2020-10-19T15:23:39.162Z\",\n                    \"updated_at\": \"2020-10-19T15:23:39.162Z\",\n                    \"deleted_at\": null,\n                    \"estates\": [\n                        {\n                            \"id\": 5,\n                            \"name\": \"Granada estate\",\n                            \"country_city_id\": 5,\n                            \"created_at\": \"2020-10-19T15:23:39.164Z\",\n                            \"updated_at\": \"2020-10-19T15:23:39.164Z\",\n                            \"deleted_at\": null\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n]"
+								}
+							]
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Room",
+					"item": [
+						{
+							"name": "room/available",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/api/room/available?estateId=1&from=2020-10-19&to=2020-10-29",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"room",
+										"available"
+									],
+									"query": [
+										{
+											"key": "estateId",
+											"value": "1"
+										},
+										{
+											"key": "from",
+											"value": "2020-10-19"
+										},
+										{
+											"key": "to",
+											"value": "2020-10-29"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Room-booking",
+					"item": [
+						{
+							"name": "room-booking/book",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from\": \"2020-10-27\",\n    \"to\": \"2020-10-28\",\n    \"roomId\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/room-booking/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"room-booking",
+										"book"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
